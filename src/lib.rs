@@ -1,6 +1,5 @@
 use std::error::Error;
 use std::fs;
-use std::env;
 extern crate getopts;
 use getopts::Options;
 use std::process;
