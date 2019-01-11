@@ -36,16 +36,6 @@ impl Config {
 		let query = args[1].clone();
 		let filename = args[2].clone();
 		
-		/*let arg: Vec<String> = env::args().collect();
-		let _input = arg[0].clone();
-
-		let mut opts = Options::new(); 
-		opts.optopt("i", "", "toggle case insensitivity", "");
-
-		let matches = match opts.parse(&arg[1..]) {
-			Ok(m) => { m },
-			Err(f) => { panic!(f.to_string()) }
-		};*/
 		let mut opts = Options::new(); 
 		opts.optflag("i", "", "toggle case insensitivity");
 		opts.optflag("h", "help", "print help menu");
@@ -73,8 +63,6 @@ impl Config {
 		};
 		
 		let case_sensitive = !matches.opt_present("i");
-			
-		//let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
 		Ok(Config { query, filename, case_sensitive })
 	}
